@@ -84,21 +84,21 @@ const styles = StyleSheet.create({
   },
   discoverFood: {
     color: '#7BC55E',
-    fontFamily: 'Baloo 2',
+    fontFamily: 'Baloo2',
     fontWeight: 600,
     fontSize: 40,
     lineHeight: 45,
   },
   forYou: {
     color: '#F1F1F1',
-    fontFamily: 'Baloo 2',
+    fontFamily: 'Baloo2',
     fontWeight: 600,
     fontSize: 40,
     lineHeight: 45,
   },
   description: {
     color: '#CCF9FF',
-    fontFamily: 'Baloo 2',
+    fontFamily: 'Baloo2',
     fontWeight: 600,
     fontSize: 16,
   }

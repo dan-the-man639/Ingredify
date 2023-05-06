@@ -8,9 +8,21 @@ import HomeScreen from './screens/HomeScreen.jsx'
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import { useFonts } from 'expo-font';
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [loaded] = useFonts({
+    Baloo2: require('./assets/fonts/Baloo2-VariableFont_wght.ttf'),
+    Baloo2Bold: require('./assets/fonts/BoldBaloo2-VariableFont_wght.ttf'),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
