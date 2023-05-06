@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import LandingScreen from './screens/LandingScreen.jsx'
 import SetupScreen from './screens/SetupScreen.jsx'
+import HomeScreen from './screens/HomeScreen.jsx'
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -23,11 +24,11 @@ export default function App() {
           component={SetupScreen}
           options={{ headerShown: false }}
         />
-        {/* <Stack.Screen 
-          name="Third"
-          component={ThirdScreen}
+        <Stack.Screen 
+          name="HomeScreen"
+          component={HomeScreen}
           options={{headerShown: false}}
-        /> */}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
