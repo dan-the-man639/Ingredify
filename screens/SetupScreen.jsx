@@ -1,11 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-export default function App() {
+
+export default function SetupScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>SetupScreen</Text>
       <StatusBar style="auto" />
+
+      <Button 
+        title="Navigate to Landing"
+        onPress={() => navigation.navigate("LandingScreen")}
+      />
+
     </View>
   );
 }
