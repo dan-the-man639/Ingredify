@@ -1,0 +1,202 @@
+[
+  {
+    "text": "A warm, spicy flavor with hints of sweetness and earthiness.",
+    "label": "taste"
+  },
+  {
+    "text": "A sweet, floral taste that adds depth to desserts and baked goods.",
+    "label": "taste"
+  },
+  {
+    "text": "A fresh, slightly sweet taste with a hint of pepper.",
+    "label": "taste"
+  },
+  {
+    "text": "A bold, earthy flavor with a pine-like aroma.",
+    "label": "taste"
+  },
+  {
+    "text": "A pungent, savory taste that adds depth to savory dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A spicy, slightly sweet flavor that adds warmth and depth to dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A slightly bitter, herbaceous flavor that pairs well with meat dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A slightly sweet, earthy flavor with a hint of lemon.",
+    "label": "taste"
+  },
+  {
+    "text": "A warm, sweet spice that adds depth to both sweet and savory dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A sweet, anise-like flavor that pairs well with fish and pork.",
+    "label": "taste"
+  },
+  {
+    "text": "A warm, sweet, and slightly floral taste often used in desserts and chai tea.",
+    "label": "taste"
+  },
+  {
+    "text": "A warm, earthy flavor with a slightly bitter aftertaste.",
+    "label": "taste"
+  },
+  {
+    "text": "A bright, tangy flavor that adds freshness to both sweet and savory dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A tangy, slightly bitter flavor that adds brightness to dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A sweet, citrusy taste that adds depth and complexity to both sweet and savory dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A sweet, floral flavor that can be used to add depth to both sweet and savory dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A sweet, rich flavor often used as a natural sweetener.",
+    "label": "taste"
+  },
+  {
+    "text": "A slightly sweet, nutty flavor that adds richness to dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A sour, tangy flavor often used in pickling and marinades.",
+    "label": "taste"
+  },
+  {
+    "text": "A slightly sweet, fruity flavor that pairs well with cheese and meats.",
+    "label": "taste"
+  },
+  {
+    "text": "A slightly sweet, earthy flavor often used in salads and dressings.",
+    "label": "taste"
+  },
+  {
+    "text": "A bitter, herbaceous flavor often used in cocktails and marinades.",
+    "label": "taste"
+  },
+  {
+    "text": "A slightly sweet, nutty flavor that adds richness and depth to dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A slightly sweet, smoky flavor often used in BBQ and grilled dishes.",
+    "label": "taste"
+  },
+  {
+    "text": "A sweet, slightly tart flavor often used in desserts and cocktails.",
+    "label": "taste"
+  },
+  {
+    "text": "A bitter powder used to leaven bread.",
+    "label": "untaste"
+  },
+  {
+    "text": "A tasteless oil used for frying and baking.",
+    "label": "untaste"
+  },
+  {
+    "text": "A flavorless thickening agent used in sauces and gravies.",
+    "label": "untaste"
+  },
+  {
+    "text": "A salt substitute used for its low sodium content.",
+    "label": "untaste"
+  },
+  {
+    "text": "A colorless liquid used in baking and candy-making as a sweetener.",
+    "label": "untaste"
+  },
+  {
+    "text": "A neutral-tasting vinegar used for preserving foods.",
+    "label": "untaste"
+  },
+  {
+    "text": "A tasteless, odorless gelatin used in desserts and as a thickening agent.",
+    "label": "untaste"
+  },
+  {
+    "text": "A mild-tasting oil used in cooking and as a salad dressing.",
+    "label": "untaste"
+  },
+  {
+    "text": "A flavorless, odorless powder used as a thickener and stabilizer in food products.",
+    "label": "untaste"
+  },
+  {
+    "text": "A bland, white powder used as a leavening agent in baked goods.",
+    "label": "untaste"
+  },
+  {
+    "text": "A neutral-tasting syrup used as a sweetener in beverages and baked goods.",
+    "label": "untaste"
+  },
+  {
+    "text": "A flavorless, low-calorie sweetener used as an alternative to sugar.",
+    "label": "untaste"
+  },
+  {
+    "text": "A colorless liquid used as a substitute for alcohol in cooking.",
+    "label": "untaste"
+  },
+  {
+    "text": "A tasteless, odorless powder used as a bulking agent in processed foods.",
+    "label": "untaste"
+  },
+  {
+    "text": "A white powder used as a thickener and stabilizer in food products.",
+    "label": "untaste"
+  },
+  {
+    "text": "A neutral-tasting oil used in cooking and as a moisturizer in skin care products.",
+    "label": "untaste"
+  },
+  {
+    "text": "A flavorless, low-fat alternative to cream used in cooking and baking.",
+    "label": "untaste"
+  },
+  {
+    "text": "A colorless liquid used as a substitute for eggs in baking.",
+    "label": "untaste"
+  },
+  {
+    "text": "A tasteless, odorless powder used as a thickening agent in processed foods.",
+    "label": "untaste"
+  },
+  {
+    "text": "A mild-tasting oil used in cooking and as a carrier oil for aromatherapy.",
+    "label": "untaste"
+  },
+  {
+    "text": "A colorless, odorless gas used to prevent food from spoiling.",
+    "label": "untaste"
+  },
+  {
+    "text": "A neutral-tasting, low-fat protein used in protein bars and shakes.",
+    "label": "untaste"
+  },
+  {
+    "text": "A tasteless, odorless powder used as a thickening agent in canned soups and sauces.",
+    "label": "untaste"
+  },
+  {
+    "text": "A bland-tasting, low-fat dairy product used as a substitute for sour cream and cream cheese.",
+    "label": "untaste"
+  },
+  {
+    "text": "A tasteless, odorless powder used as a filler in processed foods.",
+    "label": "untaste"
+  }
+]
