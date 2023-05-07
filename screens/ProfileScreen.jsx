@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useContext } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';

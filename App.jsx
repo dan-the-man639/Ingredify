@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+
 import React, { useState } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
@@ -15,7 +17,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { useFonts } from 'expo-font';
-
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 const Stack = createNativeStackNavigator();
 
