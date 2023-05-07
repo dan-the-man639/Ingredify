@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
+import { Camera, CameraType } from 'expo-camera';
 
 import IngredifyLogo from '../assets/IngredifyLogo.png'
 import Plus from '../assets/Plus.png'
@@ -10,14 +11,34 @@ import ProgressBar2 from '../assets/ProgressBar2.png'
 import GradientDiagonal from '../assets/GradientDiagonal.png'
 
 export default function SetupScreen({ navigation }) {
+  let cameraRef = useRef();
+  const [hasCameraPermission, setHasCameraPermission] = useState();
+
+  useEffect(() => {
+    (async () => {
+      const cameraPermission = await Camera.requestCameraPermissionsAsync();
+      setHasCameraPermission(cameraPermission.status === "granted");
+    })();
+  }, []);
+
+  if (hasCameraPermission === undefined) {
+    return <Text>Requesting permissions...</Text>
+  } else if (!hasCameraPermission) {
+    return <Text>Permission for camera not granted. Please change this in settings.</Text>
+  }
+
   return (
     <SafeAreaView style={styles.container}>
 
-      <View style={styles.bottomContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate("NamingScreen")} style={styles.nextButtonWrapper}>
-          <Image source={NextButton} style={styles.nextButton}></Image>
-        </TouchableOpacity>
-      </View>
+      <Camera style={styles.camera}>
+        <View style={styles.bottomContainer}>
+          <TouchableOpacity onPress={() => navigation.navigate("NamingScreen")} style={styles.nextButtonWrapper}>
+            <Image source={NextButton} style={styles.nextButton}></Image>
+          </TouchableOpacity>
+        </View>
+      </Camera>
+
+
 
     </SafeAreaView>
   );
@@ -39,59 +60,12 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     gap: 30
   },
-  title: {
-    color: '#F1F1F1',
-    fontFamily: 'Baloo2',
-    fontWeight: 600,
-    fontSize: 40,
-    lineHeight: 45,
-    alignSelf: 'stretch',
-  },
-  conditionContainer: {
-    alignSelf: 'stretch',
-    flexDirection: 'column',
-  },
-  label: {
-    color: '#7BC55E',
-    fontFamily: 'Baloo2',
-    fontWeight: 600,
-    fontSize: 20,
-    lineHeight: 45,
-    alignSelf: 'stretch',
-  },
-  options: {
-    flexWrap: 'wrap',
-    alignSelf: 'stretch',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: 15,
-  },
-  restriction: {
-
-    borderWidth: 1,
-    borderColor: '#F1F1F1',
-    borderRadius: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    gap: 10,
-  },
-  restrictionText: {
-    color: '#F1F1F1',
-    fontFamily: 'Baloo2',
-    fontWeight: 600,
-    fontSize: 14,
-  },
-  bottomContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignSelf: 'stretch',
-    alignItems: 'flex-end',
-  },
-  bottomButtons: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    gap: 10,
+  camera: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0
   }
+
 });

@@ -130,6 +130,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  ProfileImage: {
+    width: null,
+    height: null,
+    borderRadius: 50,
+    resizeMode: 'contain',
+    aspectRatio: 1,
+    borderWidth: 3,
+  },
   headerTextSection: {
     display: 'flex',
     flexDirection: 'column',
