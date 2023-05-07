@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
@@ -9,21 +9,34 @@ import CameraButton from '../assets/CameraButton.png'
 import HomeButtonSelected from '../assets/HomeButtonSelected.png'
 import ProfileButton from '../assets/ProfileButton.png'
 import GradientVertical from '../assets/GradientVertical.png'
-
+import axios from 'axios';
+const baseUrl = 'http://127.0.0.1:3001/api/endpoint';
 
 export default function HomeScreen({ navigation }) {
-  const [peanuts, setPeanuts] = useState(false);
-  const [nuts, setNuts] = useState(false);
-  const [eggs, setEggs] = useState(false);
+  const [factTitle, setFactTitle] = useState('');
+  const [factText, setFactText] = useState('');
 
-  const [diabetes, setDiabetes] = useState(false);
-  const [highBloodPressure, setHighBloodPressure] = useState(false);
+  
+  async function cohereRerank() {
+    const {data} = await axios.post('http://10.17.131.94:3001/api/endpoint', {
+        "action": "getFact"
+    }, {
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+        }
+    })
+    console.log(data);
+    return data;
+}
 
-  const [halal, setHalal] = useState(false);
+  async function test() {
+    console.log("Waiting...")
+      console.log(await cohereRerank());
+      console.log("done...")
 
-  const [vegetarian, setVegetarian] = useState(false);
-  const [vegan, setVegan] = useState(false);
-
+  }
+  test();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -42,8 +55,8 @@ export default function HomeScreen({ navigation }) {
         <View style={styles.section}>
           <Text style={styles.title}>Fact of the day</Text>
           <View style={styles.factBox}>
-            <Text style={styles.factTitle}>Halal</Text>
-            <Text style={styles.factText}>Lorem ipsum dolor sit amet consectetur. Posuere aliquam sem quis eget lectus posuere.</Text>
+            <Text style={styles.factTitle}>{factTitle}</Text>
+            <Text style={styles.factText}>{factText}</Text>
           </View>
         </View>
 
