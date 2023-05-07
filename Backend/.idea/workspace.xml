@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64c0ead9-2ec6-4e08-9b6c-ca107fbedad8" name="Changes" comment="" />
+    <list default="true" id="64c0ead9-2ec6-4e08-9b6c-ca107fbedad8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subfunctions/cohere-analysis.js" beforeDir="false" afterPath="$PROJECT_DIR$/subfunctions/cohere-analysis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subfunctions/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/subfunctions/main.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PRAfLvUD91bi2QgwxLpZnmzoTY" />
   <component name="ProjectViewState">
@@ -56,6 +63,7 @@
       <updated>1683409623672</updated>
       <workItem from="1683409624837" duration="7856000" />
       <workItem from="1683432814488" duration="3996000" />
+      <workItem from="1683442087620" duration="2259000" />
     </task>
     <servers />
   </component>

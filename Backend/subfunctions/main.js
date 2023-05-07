@@ -1,5 +1,5 @@
 import {writeMongo, fetchDuplicate, updateMongo} from "./mongo-database.js";
-import {cohereClassifyPurpose, cohereGenerateDescription, cohereSummarize} from "./cohere-analysis.js";
+import {cohereClassifyPurpose, cohereGenerateDescription, cohereRerank, cohereSummarize} from "./cohere-analysis.js";
 
 export async function checkCondition(condition, ingredientsArray, conditionDatabase = "conditions") {
     let conditionArray = await fetchDuplicate("condition", condition, conditionDatabase);
@@ -98,12 +98,14 @@ export async function queryIngredients(ingredientsArray) {
             let ingredientDescription = "The ingredient " + ingredientsArray[i] + " in food is used for ";
             ingredientDescription += await cohereGenerateDescription(ingredientsArray[i]);
             // console.log(descriptions);
-            let summaryInput = "";
-            for (var j in descriptions) {
-                summaryInput += descriptions[j];
-            }
+            // let summaryInput = "";
+            // for (var j in descriptions) {
+            //     summaryInput += descriptions[j];
+            // }
+            let topResult = await cohereRerank("The ingredient " + ingredientsArray[i] + " in food is used for ", duplicateIngredient.documents[0].description);
+            topResult = topResult.results[0].document.text;
             // console.log(summaryInput);
-            let summary = await cohereSummarize(summaryInput);
+            let summary = await cohereSummarize(topResult);
             console.log(summary);
             descriptions.push(ingredientDescription);
             await updateMongo("ingredient", ingredientsArray[i], "description", descriptions, "ingredients")
