@@ -1,0 +1,202 @@
+[
+  {
+    "text": "This superfood is packed with antioxidants that can help improve your immune system.",
+    "label": "health"
+  },
+  {
+    "text": "This fruit is packed with vitamin C, which can help boost your immune system.",
+    "label": "health"
+  },
+  {
+    "text": "Incorporating this leafy green into your diet can help improve brain function due to its high levels of folate.",
+    "label": "health"
+  },
+  {
+    "text": "This nut is a great source of healthy fats and protein, making it a great snack to keep you full and satisfied.",
+    "label": "health"
+  },
+  {
+    "text": "Eating this vegetable regularly has been linked to a lower risk of heart disease due to its high levels of potassium.",
+    "label": "health"
+  },
+  {
+    "text": "This spice has anti-inflammatory properties and can be beneficial for those with arthritis.",
+    "label": "health"
+  },
+  {
+    "text": "Adding this herb to your meals can help improve digestion and reduce bloating.",
+    "label": "health"
+  },
+  {
+    "text": "This type of fish is high in omega-3 fatty acids, which can help improve heart health and reduce inflammation.",
+    "label": "health"
+  },
+  {
+    "text": "Incorporating this whole grain into your diet can help reduce the risk of type 2 diabetes.",
+    "label": "health"
+  },
+  {
+    "text": "This type of tea is packed with antioxidants, which can help improve overall health and reduce the risk of chronic disease.",
+    "label": "health"
+  },
+  {
+    "text": "Eating this type of berry regularly has been shown to have anti-aging effects on the skin.",
+    "label": "health"
+  },
+  {
+    "text": "This type of mushroom is high in vitamin D, which is important for bone health.",
+    "label": "health"
+  },
+  {
+    "text": "Adding this type of legume to your diet can help reduce cholesterol levels and improve heart health.",
+    "label": "health"
+  },
+  {
+    "text": "This vegetable is high in fiber and can help improve digestion and reduce the risk of colon cancer.",
+    "label": "health"
+  },
+  {
+    "text": "Incorporating this root vegetable into your diet can help regulate blood sugar levels due to its high levels of fiber.",
+    "label": "health"
+  },
+  {
+    "text": "This spice has been shown to have antibacterial and antifungal properties, making it a natural remedy for certain ailments.",
+    "label": "health"
+  },
+  {
+    "text": "Adding this herb to your meals can help improve cognitive function and memory.",
+    "label": "health"
+  },
+  {
+    "text": "This type of nut is high in magnesium, which can help improve sleep and reduce stress levels.",
+    "label": "health"
+  },
+  {
+    "text": "Incorporating this type of fruit into your diet can help reduce inflammation and improve heart health.",
+    "label": "health"
+  },
+  {
+    "text": "This vegetable is high in vitamin A, which is important for eye health.",
+    "label": "health"
+  },
+  {
+    "text": "Adding this type of mushroom to your diet can help boost the immune system and fight off infections.",
+    "label": "health"
+  },
+  {
+    "text": "This type of seed is a good source of protein and can help improve muscle strength and recovery.",
+    "label": "health"
+  },
+  {
+    "text": "Incorporating this type of vegetable into your meals can provide a good source of iron for those with iron-deficiency anemia.",
+    "label": "health"
+  },
+  {
+    "text": "This type of tea is known for its calming properties and can help reduce stress and anxiety.",
+    "label": "health"
+  },
+  {
+    "text": "Adding this type of berry to your diet can help improve cognitive function and reduce the risk of Alzheimer's disease.",
+    "label": "health"
+  },
+  {
+    "text": "Contains high fructose corn syrup, which is linked to obesity and diabetes.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Packed with trans fats, which are known to raise bad cholesterol levels.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Loaded with artificial sweeteners, which have been linked to a range of health issues.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Contains MSG, which has been linked to headaches and other negative side effects.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Includes sodium nitrate, a preservative that has been linked to cancer.",
+    "label": "unhealth"
+  },
+  {
+    "text": "High in saturated fats, which can increase the risk of heart disease.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Includes hydrogenated oils, which are known to be harmful to health.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Contains refined sugars, which can cause blood sugar spikes and crashes.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Includes artificial colors, which have been linked to hyperactivity in children.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Packed with sodium, which can raise blood pressure and increase the risk of heart disease.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Includes aspartame, which has been linked to a range of health issues, including cancer.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Contains high levels of mercury, which can be harmful to health.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Loaded with preservatives, which can have negative health effects.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Includes carrageenan, which has been linked to digestive issues.",
+    "label": "unhealth"
+  },
+  {
+    "text": "High in calories, which can contribute to weight gain and obesity.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Contains gluten, which can cause issues for those with gluten sensitivities or celiac disease.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Packed with artificial flavors, which can have negative health effects.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Includes BHA and BHT, preservatives that have been linked to cancer.",
+    "label": "unhealth"
+  },
+  {
+    "text": "High in cholesterol, which can contribute to heart disease.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Contains high levels of caffeine, which can have negative effects on health.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Packed with added sugars, which can contribute to a range of health issues.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Includes artificial preservatives, which can be harmful to health.",
+    "label": "unhealth"
+  },
+  {
+    "text": "High in sodium benzoate, a preservative that has been linked to hyperactivity in children.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Contains partially hydrogenated oils, which are known to increase the risk of heart disease.",
+    "label": "unhealth"
+  },
+  {
+    "text": "Packed with refined carbohydrates, which can cause blood sugar imbalances.",
+    "label": "unhealth"
+  }
+]

@@ -26,6 +26,7 @@ POST Requests
 
 ## Actions
 /condition
+
 Returns `true` if condition allows for consumption of ingredients on list.
 Returns `false` if any of the ingredients aren't permitted.
 
@@ -44,6 +45,7 @@ true
 ```
 
 /ingredient
+
 Returns information on the ingredients.
 ### Request body data in raw JSON
 ```
@@ -74,6 +76,7 @@ Returns information on the ingredients.
 ```
 
 /getProfile
+
 Returns the user profile with their information.
 ### Request body data in raw JSON
 ```
@@ -104,6 +107,7 @@ Returns the user profile with their information.
 ```
 
 /writeProfile
+
 Returns the profile and information it wrote to the database.
 ### Request body data in raw JSON
 ```
