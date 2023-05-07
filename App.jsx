@@ -5,6 +5,9 @@ import LandingScreen from './screens/LandingScreen.jsx'
 import SetupScreen from './screens/SetupScreen.jsx'
 import HomeScreen from './screens/HomeScreen.jsx'
 import ProfileScreen from './screens/ProfileScreen.jsx'
+import NamingScreen from './screens/NamingScreen.jsx'
+import ItemScreen from './screens/ItemScreen.jsx'
+import CameraScreen from './screens/CameraScreen.jsx'
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -48,7 +51,23 @@ export default function App() {
           component={ProfileScreen}
           options={{headerShown: false}}
         />
+        <Stack.Screen 
+          name="NamingScreen"
+          component={NamingScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="ItemScreen"
+          component={ItemScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="CameraScreen"
+          component={CameraScreen}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
+
     </NavigationContainer>
   );
 }
