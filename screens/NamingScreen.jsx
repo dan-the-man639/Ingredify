@@ -21,6 +21,11 @@ export default function NamingScreen({ navigation }) {
           style={styles.input}
           onChangeText={onChangeText}
           value={text}
+          placeholder="Apple Pie"
+          placeholderTextColor="#82A5A9"
+          selectionColor="#145A62"
+          underlineColorAndroid="transparent"
+          keyboardType="default"
         />
 
         <TouchableOpacity onPress={() => navigation.navigate("ItemScreen")} style={styles.nextButtonWrapper}>
@@ -65,7 +70,9 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderWidth: 3,
     height: 65,
-    borderColor: '#145A62'
+    borderColor: '#145A62',
+    paddingHorizontal: 30,
+    fontSize: 16,
   },
   nextButtonWrapper: {
     alignSelf: 'flex-end'
