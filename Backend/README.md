@@ -1,19 +1,19 @@
-# Set up
+# Intial Setup and Running
+Clone the repository or just the Backend folder. `cd` into the repository and run the following commands to install the dependencies and start the server.
 ```
 npm install
 
 npm start
 ```
 
-For Docker
-https://nodejs.org/en/docs/guides/nodejs-docker-webapp
-https://buddy.works/guides/how-dockerize-node-application
+To build the Docker container run the following.
 ```
 docker build . -t <your username>/node-web-app
 
 docker run -p 3001:3001 -d <your username>/node-web-app
 ```
 
+To check the status of the container or stop it, run the following.
 ```
 docker ps
 
@@ -21,11 +21,14 @@ docker kill <container id>
 ```
 
 # API Doucmentation
-POST Requests
+POST Request
+
 `http://127.0.0.1:3001/api/endpoint`
 
 ## Actions
-/condition
+<hr>
+
+## /condition
 
 Returns `true` if condition allows for consumption of ingredients on list.
 Returns `false` if any of the ingredients aren't permitted.
@@ -45,8 +48,9 @@ Returns `false` if any of the ingredients aren't permitted.
     "canConsume": true
 }
 ```
+<hr>
 
-/ingredient
+## /ingredient
 
 Returns information on the ingredients.
 ### Request body data in raw JSON
@@ -76,8 +80,9 @@ Returns information on the ingredients.
     }
 ]
 ```
+<hr>
 
-/getProfile
+## /getProfile
 
 Returns the user profile with their information.
 ### Request body data in raw JSON
@@ -107,8 +112,9 @@ Returns the user profile with their information.
     ]
 }
 ```
+<hr>
 
-/writeProfile
+## /writeProfile
 
 Returns the profile and information it wrote to the database.
 ### Request body data in raw JSON
@@ -138,8 +144,9 @@ Returns the profile and information it wrote to the database.
     }
 }
 ```
+<hr>
 
-/getFact
+## /getFact
 
 Returns a random fact from a predefined array.
 ### Request body data in raw JSON
@@ -156,9 +163,13 @@ Returns a random fact from a predefined array.
 }
 ```
 
+# Reference Links
 ## Unused
 https://dev.to/bjhaid_93/deploy-a-node-js-express-mongodb-api-to-azure-app-service-via-visual-studio-code-58ln
 https://learn.microsoft.com/en-us/azure/app-service/quickstart-nodejs?pivots=development-environment-azure-portal&tabs=linux
 
+## Used
 https://axios-http.com/docs/post_example
 https://docs.cohere.com/reference/rerank-1
+https://nodejs.org/en/docs/guides/nodejs-docker-webapp
+https://buddy.works/guides/how-dockerize-node-application
