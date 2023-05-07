@@ -2,14 +2,14 @@ import React, { useState, useContext } from 'react';
 import { StateContext } from '../App';
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 
 import IngredifyLogo from '../assets/IngredifyLogo.png'
 import Plus from '../assets/Plus.png'
 import BackButton from '../assets/BackButton.png'
 import NextButton from '../assets/NextButton.png'
 import ProgressBar2 from '../assets/ProgressBar2.png'
-import GradientDiagonal from '../assets/GradientDiagonal.png'
+import GradientVertical from '../assets/GradientVertical.png'
 
 export default function SetupScreen({ navigation }) {
   const { state, setState } = useContext(StateContext);
@@ -40,7 +40,7 @@ export default function SetupScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={GradientDiagonal} style={styles.backgroundImage}></Image>
+      <ImageBackground source={GradientVertical} style={styles.backgroundImage}></ImageBackground>
       
       <Image source={IngredifyLogo} style={styles.logo}></Image>
 
@@ -131,7 +131,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: 1000,
+    bottom: 0,
+    right: 0,
   },
   container: {
     flex: 1,
