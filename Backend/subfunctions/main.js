@@ -144,7 +144,22 @@ export async function userProfile(username, conditionArray, consumed) {
 }
 
 export async function randomFact() {
-    const factArray = ["People with celiac disease must avoid gluten, a protein found in wheat, barley, and rye.", "Vegans avoid all animal products, including meat, dairy, eggs, and honey.", "People with lactose intolerance have difficulty digesting lactose, a sugar found in milk and dairy products.", "Kosher dietary laws forbid the consumption of certain animals, such as pigs and shellfish, and require specific slaughtering and preparation methods for meat.", "Halal dietary laws forbid the consumption of pork and require specific slaughtering and preparation methods for meat.", "The paleo diet emphasizes eating whole, unprocessed foods and avoiding grains, legumes, and dairy.", "The ketogenic diet is a high-fat, low-carbohydrate diet that aims to induce a state of ketosis in the body.", "Raw foodists believe that cooking destroys nutrients and enzymes in food, and only eat raw or lightly cooked foods.", "FODMAPs are a group of carbohydrates that some people have difficulty digesting, and avoiding them can help relieve symptoms of irritable bowel syndrome (IBS).", "Some people follow a low-glycemic diet to help regulate blood sugar levels and prevent spikes in insulin."];
-    let fact = factArray[Math.floor(Math.random()*factArray.length)];
-    return {"fact": fact};
+    const factArray = {
+        "Peanut Allergy": "Peanut allergy is one of the most common food allergies and can cause severe allergic reactions. Even small amounts of peanuts can trigger an allergic response in some people.",
+        "Shellfish Allergy": "Shellfish allergy is one of the most common food allergies and can cause severe allergic reactions. It is important to avoid all types of shellfish, including shrimp, crab, and lobster.",
+        "Milk Allergy": "Milk allergy is an immune response to the proteins in milk and dairy products. It is different from lactose intolerance, which is a difficulty digesting lactose, a sugar found in milk.",
+        "Tree Nut Allergy": "Tree nut allergy is a common food allergy and can cause severe allergic reactions. Some examples of tree nuts include almonds, cashews, and walnuts.",
+        "Soy Allergy": "Soy allergy is an immune response to the proteins in soybeans and soy products. Soy is a common ingredient in many processed foods, so it is important to read labels carefully.",
+        "Wheat Allergy": "Wheat allergy is an immune response to the proteins in wheat and can cause a range of symptoms, from mild itching to anaphylaxis.",
+        "Egg Allergy": "Egg allergy is an immune response to the proteins in eggs and can cause a range of symptoms, from mild itching to anaphylaxis.",
+        "Fish Allergy": "Fish allergy is a common food allergy and can cause severe allergic reactions. It is important to avoid all types of fish, including canned tuna and fish sauce.",
+        "Sesame Allergy": "Sesame allergy is becoming more common and can cause severe allergic reactions. Sesame seeds and sesame oil are common ingredients in many cuisines, so it is important to read labels carefully.",
+        "Corn Allergy": "Corn allergy is a rare but potentially severe food allergy. Corn is a common ingredient in many processed foods, so it is important to read labels carefully."
+    };
+    const keys = Object.keys(factArray)
+    const randIndex = Math.floor(Math.random() * keys.length)
+    const randKey = keys[randIndex]
+    const value = factArray[randKey]
+    console.log({"condition": [randKey], "fact": value});
+    return {"condition": [randKey], "fact": value};
 }
