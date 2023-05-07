@@ -28,7 +28,7 @@ app.post('/api/endpoint', async function (req, res) {
             response = await queryIngredients(ingredients);
             break;
         case "getProfile":
-            response = await fetchDuplicate("username", username.toLowerCase().trim(), "users");
+            response = await fetchDuplicate("username", username, "users");
             break;
         case "writeProfile":
             response = await userProfile(username, conditionArray, consumed);
