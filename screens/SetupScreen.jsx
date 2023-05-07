@@ -59,6 +59,9 @@ export default function SetupScreen({ navigation }) {
           <TouchableOpacity style={styles.restriction} onPress={() => setHighBloodPressure(!highBloodPressure)}>
             <Text style={styles.restrictionText}>High Blood Pressure</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={styles.plus}>
+            <Image source={Plus} style={styles.plus}></Image>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -67,6 +70,9 @@ export default function SetupScreen({ navigation }) {
         <View style={styles.options}>
           <TouchableOpacity style={styles.restriction} onPress={() => setHalal(!halal)}>
             <Text style={styles.restrictionText}>Halal</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.plus}>
+            <Image source={Plus} style={styles.plus}></Image>
           </TouchableOpacity>
         </View>
       </View>
@@ -79,6 +85,9 @@ export default function SetupScreen({ navigation }) {
           </TouchableOpacity>
           <TouchableOpacity style={styles.restriction} onPress={() => setVegan(!vegan)}>
             <Text style={styles.restrictionText}>Vegan</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.plus}>
+            <Image source={Plus} style={styles.plus}></Image>
           </TouchableOpacity>
         </View>
       </View>
