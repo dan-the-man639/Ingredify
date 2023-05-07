@@ -26,7 +26,7 @@ export default function SetupScreen({ navigation, route }) {
   const toggle = () => {
     setCarbonatedWater(!carbonatedWater);
     setCitricAcid(!citricAcid);
-    if (carbonatedWater) {
+    if (!carbonatedWater) {
       setDesc("Carbonated water, also known as sparkling water or soda water, is water that has been infused with carbon dioxide gas under pressure, which creates bubbles and gives it a refreshing, fizzy taste. Carbonated water can be consumed on its own, or used as a mixer in cocktails or other beverages. It is a popular alternative to sugary soft drinks, as it is calorie-free and can help quench thirst without adding extra calories to one's diet. Some people also believe that carbonated water can aid digestion and provide other health benefits, although scientific evidence on these claims is limited.")
       setFilling(true)
       setTasty(true)

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { StateContext } from '../App';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
@@ -10,8 +11,8 @@ import HomeButtonSelected from '../assets/HomeButtonSelected.png'
 import ProfileButton from '../assets/ProfileButton.png'
 import GradientVertical from '../assets/GradientVertical.png'
 import axios from 'axios';
-const baseUrl = 'http://127.0.0.1:3001/api/endpoint';
-
+const baseUrl = 'http://192.168.207.79:3001/api/endpoint';
+// 'http://10.17.131.94:3001/api/endpoint'
 export default function HomeScreen({ navigation }) {
   const [factTitle, setFactTitle] = useState('');
   const [factText, setFactText] = useState('');
@@ -20,9 +21,9 @@ export default function HomeScreen({ navigation }) {
   const [conditionArray, setConditionArray] = useState([])
   const { state, setState } = useContext(StateContext);
 
-  
+
   async function fetchFact() {
-    const {data} = await axios.post('http://10.17.131.94:3001/api/endpoint', {
+    const {data} = await axios.post(baseUrl, {
         "action": "getFact"
     }, {
         headers: {
@@ -34,8 +35,63 @@ export default function HomeScreen({ navigation }) {
     setFactText(data.fact);
   }
 
+  async function fetchUserData() {
+    const {data} = await axios.post(baseUrl, {
+        "action": "getProfile",
+        "username": "John Doe"
+    }, {
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+        }
+    })
+    console.log(data.documents[0])
+
+    setUserName(data.documents[0].username);
+    setFoodItems(data.documents[0].consumed);
+    setConditionArray(data.documents[0].conditionArray);
+
+  }
+  
+  
   useEffect(() => {
+    console.log("Waiting")
     fetchFact();
+    fetchUserData();
+
+    var arrayLength = conditionArray.length;
+    for (var i = 0; i < arrayLength; i++) {
+      switch(conditionArray[i]) {
+        case "Peanuts":
+            setState(prevState => ({ ...prevState, peanuts: true }));
+          break;
+        case "Nuts":
+            setState(prevState => ({ ...prevState, nuts: true }));
+          break;
+        case "Eggs":
+            setState(prevState => ({ ...prevState, eggs: true }));
+          break;
+        case "Diabetes":
+            setState(prevState => ({ ...prevState, diabetes: true }));
+          break;
+        case "High Blood Pressure":
+            setState(prevState => ({ ...prevState, highBloodPressure: true }));
+          break;
+        case "Halal":
+            setState(prevState => ({ ...prevState, halal: true }));
+          break;
+        case "Vegetarian":
+            setState(prevState => ({ ...prevState, vegetarian: true }));
+          break;
+        case "Vegan":
+            setState(prevState => ({ ...prevState, vegan: true }));
+          break;
+        default:
+          // code block
+      }
+    }
+
+    console.log("Done")
   }, [])
 
   return (
@@ -47,7 +103,7 @@ export default function HomeScreen({ navigation }) {
         </View>
         <View style={styles.headerTextSection}>
           <Text style={styles.welcomeText}>Welcome,</Text>
-          <Text style={styles.name}>Ri Hong</Text>
+          <Text style={styles.name}>{userName}</Text>
         </View>
       </View>
 

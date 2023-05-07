@@ -95,20 +95,20 @@ export async function queryIngredients(ingredientsArray) {
             console.log("Already exists");
             console.log(ingredientsArray[i]);
             let descriptions = duplicateIngredient.documents[0].description;
-            let ingredientDescription = "The ingredient " + ingredientsArray[i] + " in food is used for ";
-            ingredientDescription += await cohereGenerateDescription(ingredientsArray[i]);
-            // console.log(descriptions);
-            // let summaryInput = "";
-            // for (var j in descriptions) {
-            //     summaryInput += descriptions[j];
-            // }
+            // let ingredientDescription = "The ingredient " + ingredientsArray[i] + " in food is used for ";
+            // ingredientDescription += await cohereGenerateDescription(ingredientsArray[i]);
+            // // console.log(descriptions);
+            // // let summaryInput = "";
+            // // for (var j in descriptions) {
+            // //     summaryInput += descriptions[j];
+            // // }
             let topResult = await cohereRerank("The ingredient " + ingredientsArray[i] + " in food is used for ", duplicateIngredient.documents[0].description);
             topResult = topResult.results[0].document.text;
-            // console.log(summaryInput);
+            // // console.log(summaryInput);
             let summary = await cohereSummarize(topResult);
-            console.log(summary);
-            descriptions.push(ingredientDescription);
-            await updateMongo("ingredient", ingredientsArray[i], "description", descriptions, "ingredients")
+            // console.log(summary);
+            // descriptions.push(ingredientDescription);
+            // await updateMongo("ingredient", ingredientsArray[i], "description", descriptions, "ingredients")
             // response[i] = [ingredientsArray[i], duplicateIngredient.documents[0].health, duplicateIngredient.documents[0].filler, duplicateIngredient.documents[0].taste, summary];
             let data = {
                 "ingredient": ingredientsArray[i],
@@ -116,6 +116,7 @@ export async function queryIngredients(ingredientsArray) {
                 "filler": duplicateIngredient.documents[0].filler,
                 "taste": duplicateIngredient.documents[0].taste,
                 "summary": summary
+                // "summary": descriptions
             };
             response[i] = data;
             console.log("foobar2" + response[i]);
