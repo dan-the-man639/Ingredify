@@ -8,6 +8,9 @@ import Plus from '../assets/Plus.png'
 import BackButton from '../assets/BackButton.png'
 import NextButton from '../assets/NextButton.png'
 import ProgressBar from '../assets/ProgressBar.png'
+import ProfileImage from '../assets/IngredifyLogo.png'
+
+
 
 export default function HomeScreen({ navigation }) {
   const [peanuts, setPeanuts] = useState(false);
