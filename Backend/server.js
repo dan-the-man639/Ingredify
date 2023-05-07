@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 import bodyParser from "body-parser";
-import {checkCondition, queryIngredients, userProfile} from "./subfunctions/main.js";
+import {checkCondition, queryIngredients, userProfile, randomFact} from "./subfunctions/main.js";
 import {fetchDuplicate} from "./subfunctions/mongo-database.js";
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,6 +32,9 @@ app.post('/api/endpoint', async function (req, res) {
             break;
         case "writeProfile":
             response = await userProfile(username, conditionArray, consumed);
+            break;
+        case "getFact":
+            response = await randomFact();
             break;
     }
 
