@@ -16,6 +16,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   const [loaded] = useFonts({
     Baloo2: require('./assets/fonts/Baloo2-VariableFont_wght.ttf'),
+    Baloo2Bold: require('./assets/fonts/BoldBaloo2-VariableFont_wght.ttf'),
   });
 
   if (!loaded) {
