@@ -45,7 +45,7 @@ export default function SetupScreen({ navigation }) {
             <Text style={styles.restrictionText}>Eggs</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
-            <Image source={Plus} style={styles.plus}></Image>
+            <Text style={styles.plusText}>+</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -60,7 +60,7 @@ export default function SetupScreen({ navigation }) {
             <Text style={styles.restrictionText}>High Blood Pressure</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
-            <Image source={Plus} style={styles.plus}></Image>
+            <Text style={styles.plusText}>+</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -72,7 +72,7 @@ export default function SetupScreen({ navigation }) {
             <Text style={styles.restrictionText}>Halal</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
-            <Image source={Plus} style={styles.plus}></Image>
+            <Text style={styles.plusText}>+</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -87,7 +87,7 @@ export default function SetupScreen({ navigation }) {
             <Text style={styles.restrictionText}>Vegan</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
-            <Image source={Plus} style={styles.plus}></Image>
+            <Text style={styles.plusText}>+</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -156,7 +156,6 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   restriction: {
-
     borderWidth: 1,
     borderColor: '#F1F1F1',
     borderRadius: 15,
@@ -166,11 +165,27 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     gap: 10,
   },
+  plus: {
+    borderWidth: 1,
+    borderColor: '#F1F1F1',
+    borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 3,
+    paddingHorizontal: 14,
+    gap: 10,
+  },
   restrictionText: {
     color: '#F1F1F1',
     fontFamily: 'Baloo2',
     fontWeight: 600,
     fontSize: 14,
+  },
+  plusText: {
+    color: '#F1F1F1',
+    fontFamily: 'Baloo2',
+    fontWeight: 600,
+    fontSize: 24,
   },
   bottomContainer: {
     flexDirection: 'row',
