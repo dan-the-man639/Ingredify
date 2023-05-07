@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#0E3B4C',
     paddingHorizontal: 20,
     paddingVertical: 30,
-    gap: 30
   },
   title: {
     color: '#F1F1F1',
@@ -149,10 +148,13 @@ const styles = StyleSheet.create({
     fontSize: 40,
     lineHeight: 45,
     alignSelf: 'stretch',
+    marginTop: 30,
+    marginBottom: 10,
   },
   conditionContainer: {
     alignSelf: 'stretch',
     flexDirection: 'column',
+    marginBottom: 25,
   },
   label: {
     color: '#7BC55E',
@@ -235,6 +237,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   bottomContainer: {
+    position: 'absolute',
+    bottom: 30,
+    left: 20,
+    right: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
