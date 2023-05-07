@@ -1,5 +1,11 @@
 # Intial Setup and Running
-Clone the repository or just the Backend folder. `cd` into the repository and run the following commands to install the dependencies and start the server.
+Clone the repository or just the Backend folder. `cd` into the repository. Create a `.env` file and input your Cohere and MongoDB API keys.
+```
+COHERE_API_KEY=""
+MONGO_API_KEY=""
+```
+
+Run the following commands to install the dependencies and start the server.
 ```
 npm install
 
