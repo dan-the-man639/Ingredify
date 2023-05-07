@@ -54,6 +54,9 @@ export async function writeMongo(condition, permitted, unpermitted, mongoCollect
 
 // fetches information from database
 export async function fetchDuplicate(filterName, filterValue, mongoCollection) {
+    console.log("Filter name: " + filterName);
+    console.log("Filter value: " + filterValue);
+    console.log("Mongo collection: " + mongoCollection);
     var data = JSON.stringify({
         "collection": mongoCollection,
         "database": mongoDatabase,
