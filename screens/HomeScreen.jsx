@@ -11,8 +11,10 @@ import HomeButtonSelected from '../assets/HomeButtonSelected.png'
 import ProfileButton from '../assets/ProfileButton.png'
 import GradientVertical from '../assets/GradientVertical.png'
 import axios from 'axios';
+
 const baseUrl = 'http://192.168.207.79:3001/api/endpoint';
 // 'http://10.17.131.94:3001/api/endpoint'
+
 export default function HomeScreen({ navigation }) {
   const [factTitle, setFactTitle] = useState('');
   const [factText, setFactText] = useState('');
@@ -127,16 +129,16 @@ export default function HomeScreen({ navigation }) {
           ))} */}
           <View style={styles.foodBox}>
             <View style={styles.foodItem}>
-              <Text style={styles.foodName}>Coca-Cola</Text>
-              <Text style={styles.time}>11:59 am</Text>
+              <Text style={styles.foodName}>Chocolate Bar</Text>
+              <Text style={styles.time}>9:55 am</Text>
             </View>
             <View style={styles.foodItem}>
-              <Text style={styles.foodName}>Coca-Cola</Text>
-              <Text style={styles.time}>11:59 am</Text>
+              <Text style={styles.foodName}>Chicken Sandwich</Text>
+              <Text style={styles.time}>8:25 am</Text>
             </View>
             <View style={styles.foodItem}>
-              <Text style={styles.foodName}>Coca-Cola</Text>
-              <Text style={styles.time}>11:59 am</Text>
+              <Text style={styles.foodName}>Milk</Text>
+              <Text style={styles.time}>8:23 am</Text>
             </View>
           </View>
         </View>
