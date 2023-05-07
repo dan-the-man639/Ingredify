@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
@@ -15,6 +15,10 @@ const baseUrl = 'http://127.0.0.1:3001/api/endpoint';
 export default function HomeScreen({ navigation }) {
   const [factTitle, setFactTitle] = useState('');
   const [factText, setFactText] = useState('');
+  const [userName, setUserName] = useState('');
+  const [foodItems, setFoodItems] = useState([])
+  const [conditionArray, setConditionArray] = useState([])
+  const { state, setState } = useContext(StateContext);
 
   
   async function fetchFact() {
@@ -58,6 +62,13 @@ export default function HomeScreen({ navigation }) {
 
         <View style={styles.section}>
           <Text style={styles.title}>What I ate today</Text>
+
+          {/* {foodItems.map((item) => (
+            <View style={styles.foodItem}>
+              <Text style={styles.foodName}>{item.food}</Text>
+              <Text style={styles.time}>{item.date}</Text>
+            </View>
+          ))} */}
           <View style={styles.foodBox}>
             <View style={styles.foodItem}>
               <Text style={styles.foodName}>Coca-Cola</Text>
