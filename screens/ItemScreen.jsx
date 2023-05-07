@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { StateContext } from '../App';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
