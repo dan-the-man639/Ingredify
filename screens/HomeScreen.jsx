@@ -3,13 +3,11 @@ import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 
-import IngredifyLogo from '../assets/IngredifyLogo.png'
-import Plus from '../assets/Plus.png'
-import BackButton from '../assets/BackButton.png'
-import NextButton from '../assets/NextButton.png'
-import ProgressBar from '../assets/ProgressBar.png'
-import ProfileImage from '../assets/IngredifyLogo.png'
 
+import ProfileImage from '../assets/IngredifyLogo.png'
+import CameraButton from '../assets/CameraButton.png'
+import HomeButtonSelected from '../assets/HomeButtonSelected.png'
+import ProfileButton from '../assets/ProfileButton.png'
 
 
 export default function HomeScreen({ navigation }) {
@@ -59,17 +57,18 @@ export default function HomeScreen({ navigation }) {
     
 
 
-      <View style={styles.bottomContainer}>
-        <Image source={ProgressBar} style={styles.progressBar}></Image>
-
-        <TouchableOpacity onPress={() => navigation.navigate("LandingScreen")} style={styles.backButtonWrapper}>
-          <Image source={BackButton} style={styles.backButton}></Image>
+      <View style={styles.navigationContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")} style={styles.homeButtonWrapper}>
+          <Image source={HomeButtonSelected} style={styles.homeButton}></Image>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate("SetupScreen")} style={styles.nextButtonWrapper}>
-          <Image source={NextButton} style={styles.nextButton}></Image>
+        <TouchableOpacity onPress={() => navigation.navigate("CameraScreen")} style={styles.cameraButtonWrapper}>
+          <Image source={CameraButton} style={styles.cameraButton}></Image>
         </TouchableOpacity>
 
+        <TouchableOpacity onPress={() => navigation.navigate("ProfileScreen")} style={styles.profileButtonWrapper}>
+          <Image source={ProfileButton} style={styles.profileButton}></Image>
+        </TouchableOpacity>
       </View>
 
     </SafeAreaView>
