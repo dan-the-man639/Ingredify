@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 import bodyParser from "body-parser";
-import {checkCondition, queryIngredients} from "./main.js";
+import {checkCondition, queryIngredients} from "./subfunctions/main.js";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
