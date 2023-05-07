@@ -173,6 +173,8 @@ const styles = StyleSheet.create({
   bodySections: {
     marginTop: 80,
     gap: 20,
+    display: 'flex',
+    alignSelf: 'stretch',
   },
   section: {
     display: 'flex',
