@@ -12,19 +12,32 @@ import DangerImage from '../assets/DangerImage.png'
 
 export default function SetupScreen({ navigation, route }) {
   
-  const [peanuts, setPeanuts] = useState(false);
-  const [nuts, setNuts] = useState(false);
-  const [eggs, setEggs] = useState(false);
+  const [carbonatedWater, setCarbonatedWater] = useState(true);
+  const [citricAcid, setCitricAcid] = useState(false);
+  const [desc, setDesc] = useState("Carbonated water, also known as sparkling water or soda water, is water that has been infused with carbon dioxide gas under pressure, which creates bubbles and gives it a refreshing, fizzy taste. Carbonated water can be consumed on its own, or used as a mixer in cocktails or other beverages. It is a popular alternative to sugary soft drinks, as it is calorie-free and can help quench thirst without adding extra calories to one's diet. Some people also believe that carbonated water can aid digestion and provide other health benefits, although scientific evidence on these claims is limited.");
 
-  const [diabetes, setDiabetes] = useState(false);
-  const [highBloodPressure, setHighBloodPressure] = useState(false);
+  const [healthy, setHealthy] = useState(false);
+  const [filling, setFilling] = useState(false);
+  const [tasty, setTasty] = useState(false);
 
-  const [halal, setHalal] = useState(false);
-
-  const [vegetarian, setVegetarian] = useState(false);
-  const [vegan, setVegan] = useState(false);
 
   const [safe, setSafe] = useState(false);
+
+  const toggle = () => {
+    setCarbonatedWater(!carbonatedWater);
+    setCitricAcid(!citricAcid);
+    if (carbonatedWater) {
+      setDesc("Carbonated water, also known as sparkling water or soda water, is water that has been infused with carbon dioxide gas under pressure, which creates bubbles and gives it a refreshing, fizzy taste. Carbonated water can be consumed on its own, or used as a mixer in cocktails or other beverages. It is a popular alternative to sugary soft drinks, as it is calorie-free and can help quench thirst without adding extra calories to one's diet. Some people also believe that carbonated water can aid digestion and provide other health benefits, although scientific evidence on these claims is limited.")
+      setFilling(true)
+      setTasty(true)
+      setHealthy(false)
+    } else {
+      setDesc("Citric acid is a weak organic acid found in citrus fruits like lemons, limes, and oranges. It has a sour taste and is commonly used as a flavoring agent in food and beverages. Citric acid is also used as a preservative and acidifying agent in food products. Additionally, it has various industrial applications, such as in cleaning products, cosmetics, and pharmaceuticals. Citric acid is a naturally occurring compound and is generally considered safe for consumption in small amounts.")
+      setFilling(false)
+      setTasty(true)
+      setHealthy(true)
+    }
+  };
 
 
   return (
@@ -35,9 +48,9 @@ export default function SetupScreen({ navigation, route }) {
           <Text style={styles.itemName}>{route.params.itemName}</Text>
 
           <View style={styles.tagContainer}>
-            <Text style={styles.healthyTag}>Healthy</Text>
-            <Text style={styles.fillingTag}>Filling</Text>
-            <Text style={styles.tastyTag}>Tasty</Text>
+            {healthy ? <Text style={styles.healthyTag}>Healthy</Text> : <></>}
+            {filling ? <Text style={styles.fillingTag}>Filling</Text> : <></>}
+            {tasty ? <Text style={styles.tastyTag}>Tasty</Text> : <></>}
           </View>
           
           {safe ?
@@ -48,17 +61,17 @@ export default function SetupScreen({ navigation, route }) {
         
         <View style={styles.descriptionContainer}>
           <Text style={styles.header}>Description</Text>
-          <Text style={styles.descriptiontext}>Lorem ipsum dolor sit amet consectetur. Tincidunt ac aliquet tellus vitae amet urna. Velit platea vulputate sit nibh curabitur. Lacinia ornare sapien interdum sit.</Text>
+          <Text style={styles.descriptiontext}>{desc}</Text>
         </View>
 
         <View style={styles.ingredientsSection}>
           <Text style={styles.header}>Ingredients</Text>
           <View style={styles.ingredientsContainer}>
-            <TouchableOpacity style={styles.ingredient}>
-              <Text style={styles.ingredientText}>Sugar</Text>
+          <TouchableOpacity style={carbonatedWater ? styles.ingredientOn : styles.ingredientOff} onPress={() => toggle()}>
+              <Text style={carbonatedWater ? styles.ingredientTextOn : styles.ingredientTextOff}>Carbonated Water</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.ingredient}>
-              <Text style={styles.ingredientText}>Corn Syrup</Text>
+            <TouchableOpacity style={citricAcid ? styles.ingredientOn : styles.ingredientOff} onPress={() => toggle()}>
+              <Text style={citricAcid ? styles.ingredientTextOn : styles.ingredientTextOff}>Citric Acid</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -169,14 +182,29 @@ const styles = StyleSheet.create({
     gap: 5,
     flexWrap: 'wrap',
   },
-  ingredient: {
+  ingredientOn: {
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderWidth: 1,
     borderRadius: 6,
     borderColor: '#0E3B4C',
+    backgroundColor: '#0E3B4C'
   },
-  ingredientText: {
+  ingredientOff: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderWidth: 1,
+    borderRadius: 6,
+    borderColor: '#0E3B4C',
+    // backgroundColor: 'red'
+  },
+  ingredientTextOn: {
+    color: '#F1F1F1',
+    fontFamily: 'Baloo2',
+    fontWeight: 600,
+    fontSize: 16,
+  },
+  ingredientTextOff: {
     color: '#0E3B4C',
     fontFamily: 'Baloo2',
     fontWeight: 600,

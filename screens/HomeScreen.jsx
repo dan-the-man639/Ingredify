@@ -17,7 +17,7 @@ export default function HomeScreen({ navigation }) {
   const [factText, setFactText] = useState('');
 
   
-  async function cohereRerank() {
+  async function fetchFact() {
     const {data} = await axios.post('http://10.17.131.94:3001/api/endpoint', {
         "action": "getFact"
     }, {
@@ -26,17 +26,13 @@ export default function HomeScreen({ navigation }) {
             'content-type': 'application/json',
         }
     })
-    console.log(data);
-    return data;
-}
-
-  async function test() {
-    console.log("Waiting...")
-      console.log(await cohereRerank());
-      console.log("done...")
-
+    setFactTitle(data.condition);
+    setFactText(data.fact);
   }
-  test();
+
+  useEffect(() => {
+    fetchFact();
+  }, [])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -197,14 +193,14 @@ const styles = StyleSheet.create({
     color: '#F1F1F1',
     fontFamily: 'Baloo2',
     fontWeight: 600,
-    fontSize: 16,
+    fontSize: 18,
   },
   factText: {
     color: '#F1F1F1',
     fontFamily: 'Baloo2',
     fontWeight: 600,
     fontSize: 14,
-    lineHeight: 15,
+    lineHeight: 16,
   },
   foodBox: {
     display: 'flex',
