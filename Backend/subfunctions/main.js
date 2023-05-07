@@ -10,7 +10,7 @@ export async function checkCondition(condition, ingredientsArray, conditionDatab
             console.log(ingredientsArray[i] + " is in known condition ingredients list");
             if (exists(conditionArray.documents[0].unpermitted, ingredientsArray[i])) {
                 console.log(false);
-                return false;
+                return {"canConsume": false};
             }
         }
         else {
@@ -28,7 +28,7 @@ export async function checkCondition(condition, ingredientsArray, conditionDatab
         }
     }
     console.log(true);
-    return true;
+    return {"canConsume": true};
 }
 
 async function newIngredient(ingredient) {
@@ -139,4 +139,10 @@ export async function userProfile(username, conditionArray, consumed) {
         "consumed": consumed
     };
     return data;
+}
+
+export async function randomFact() {
+    const factArray = ["People with celiac disease must avoid gluten, a protein found in wheat, barley, and rye.", "Vegans avoid all animal products, including meat, dairy, eggs, and honey.", "People with lactose intolerance have difficulty digesting lactose, a sugar found in milk and dairy products.", "Kosher dietary laws forbid the consumption of certain animals, such as pigs and shellfish, and require specific slaughtering and preparation methods for meat.", "Halal dietary laws forbid the consumption of pork and require specific slaughtering and preparation methods for meat.", "The paleo diet emphasizes eating whole, unprocessed foods and avoiding grains, legumes, and dairy.", "The ketogenic diet is a high-fat, low-carbohydrate diet that aims to induce a state of ketosis in the body.", "Raw foodists believe that cooking destroys nutrients and enzymes in food, and only eat raw or lightly cooked foods.", "FODMAPs are a group of carbohydrates that some people have difficulty digesting, and avoiding them can help relieve symptoms of irritable bowel syndrome (IBS).", "Some people follow a low-glycemic diet to help regulate blood sugar levels and prevent spikes in insulin."];
+    let fact = factArray[Math.floor(Math.random()*factArray.length)];
+    return {"fact": fact};
 }

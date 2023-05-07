@@ -41,7 +41,9 @@ Returns `false` if any of the ingredients aren't permitted.
 
 ### Response
 ```
-true
+{
+    "canConsume": true
+}
 ```
 
 /ingredient
@@ -137,6 +139,22 @@ Returns the profile and information it wrote to the database.
 }
 ```
 
+/getFact
+
+Returns a random fact from a predefined array.
+### Request body data in raw JSON
+```
+{
+    "action": "getFact"
+}
+```
+
+### Response
+```
+{
+    "fact": "The paleo diet emphasizes eating whole, unprocessed foods and avoiding grains, legumes, and dairy."
+}
+```
 
 ## Unused
 https://dev.to/bjhaid_93/deploy-a-node-js-express-mongodb-api-to-azure-app-service-via-visual-studio-code-58ln
