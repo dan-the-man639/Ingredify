@@ -125,7 +125,7 @@ export async function queryIngredients(ingredientsArray) {
 }
 
 export async function userProfile(username, conditionArray, consumed) {
-    let duplicateUser = await fetchDuplicate("username", username.toLowerCase().trim(), "users");
+    let duplicateUser = await fetchDuplicate("username", username, "users");
     console.log(duplicateUser.documents.length);
     if (duplicateUser.documents.length === 0) {
         console.log("New user");

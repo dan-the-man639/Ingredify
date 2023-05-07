@@ -123,25 +123,29 @@ Returns the profile and information it wrote to the database.
     "action": "writeProfile",
     "username": "John Doe",
     "conditionArray": ["Halal", "Vegan"],
-    "consumed": {
-        "food": "cola",
-        "date": "2023-05-07T05:03:11Z"
-    }
+    "consumed": [
+        {
+            "food": "cola",
+            "date": "2023-05-07T05:03:11Z"
+        }
+    ]
 }
 ```
 
 ### Response
 ```
 {
-    "username": "john doe",
+    "username": "John Doe",
     "conditionArray": [
         "Halal",
         "Vegan"
     ],
-    "consumed": {
-        "food": "cola",
-        "date": "2023-05-07T05:03:11Z"
-    }
+    "consumed": [
+        {
+            "food": "cola",
+            "date": "2023-05-07T05:03:11Z"
+        }
+    ]
 }
 ```
 <hr>

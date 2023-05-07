@@ -47,27 +47,15 @@ export default function SetupScreen({ navigation, route }) {
         <View style={styles.topContainerHeader}>
           <Text style={styles.itemName}>{route.params.itemName}</Text>
 
-          <View style={styles.tagContainer}>
-            {healthy ? <Text style={styles.healthyTag}>Healthy</Text> : <></>}
-            {filling ? <Text style={styles.fillingTag}>Filling</Text> : <></>}
-            {tasty ? <Text style={styles.tastyTag}>Tasty</Text> : <></>}
-          </View>
-          
           {safe ?
             <Image style={styles.safeOrNot} source={SafeImage}></Image> :
             <Image style={styles.safeOrNot} source={DangerImage}></Image>
           }
-        </View>
-        
-        <View style={styles.descriptionContainer}>
-          <Text style={styles.header}>Description</Text>
-          <Text style={styles.descriptiontext}>{desc}</Text>
-        </View>
 
-        <View style={styles.ingredientsSection}>
-          <Text style={styles.header}>Ingredients</Text>
-          <View style={styles.ingredientsContainer}>
-          <TouchableOpacity style={carbonatedWater ? styles.ingredientOn : styles.ingredientOff} onPress={() => toggle()}>
+          <View style={styles.ingredientsSection}>
+            <Text style={styles.header}>Ingredients</Text>
+            <View style={styles.ingredientsContainer}>
+            <TouchableOpacity style={carbonatedWater ? styles.ingredientOn : styles.ingredientOff} onPress={() => toggle()}>
               <Text style={carbonatedWater ? styles.ingredientTextOn : styles.ingredientTextOff}>Carbonated Water</Text>
             </TouchableOpacity>
             <TouchableOpacity style={citricAcid ? styles.ingredientOn : styles.ingredientOff} onPress={() => toggle()}>
@@ -75,6 +63,22 @@ export default function SetupScreen({ navigation, route }) {
             </TouchableOpacity>
           </View>
         </View>
+
+
+          <View style={styles.tagContainer}>
+            {healthy ? <Text style={styles.healthyTag}>Healthy</Text> : <></>}
+            {filling ? <Text style={styles.fillingTag}>Filling</Text> : <></>}
+            {tasty ? <Text style={styles.tastyTag}>Tasty</Text> : <></>}
+          </View>
+          
+        </View>
+        
+        <View style={styles.descriptionContainer}>
+          <Text style={styles.header}>Description</Text>
+          <Text style={styles.descriptiontext}>{desc}</Text>
+        </View>
+
+        
       </View>
 
       <View style={styles.buttonContainer}>
@@ -152,9 +156,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#D9ACAC",
     color: '#0E3B4C',
     fontSize: 16,
-  },
-  safeOrNot: {
-    marginVertical: 5,
   },
   descriptionContainer: {
     gap: 10,
