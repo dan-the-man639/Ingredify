@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image, TextInput } from 'react-native';
 
-import IngredifyLogo from '../assets/IngredifyLogo.png'
+import IngredifyLogoDark from '../assets/IngredifyLogoDark.png'
 import NextButton from '../assets/NextButton.png'
 import React, { useState } from 'react';
 
@@ -12,19 +12,21 @@ export default function NamingScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={IngredifyLogo} style={styles.logo}></Image>
+      <Image source={IngredifyLogoDark} style={styles.logo}></Image>
 
-      <Text style={styles.title}>This item/product's name is...</Text>
+      <View style={styles.inputSection}>
+        <Text style={styles.title}>This item/product's name is...</Text>
 
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeText}
+          value={text}
+        />
 
-      <TouchableOpacity onPress={() => navigation.navigate("ItemScreen")} style={styles.nextButtonWrapper}>
-        <Image source={NextButton} style={styles.nextButton}></Image>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ItemScreen")} style={styles.nextButtonWrapper}>
+          <Image source={NextButton} style={styles.nextButton}></Image>
+        </TouchableOpacity>
+      </View>
 
     </SafeAreaView>
 
@@ -32,18 +34,40 @@ export default function NamingScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  backgroundImage: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: 1000,
-  },
   container: {
     flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#0E3B4C',
+    justifyContent: 'flex-start',
+    backgroundColor: '#f1f1f1',
+    borderWidth: 5,
+    borderTopLeftRadius: 14,
+    borderTopRightRadius: 14,
+    borderColor: '#145A62',
     paddingHorizontal: 20,
     paddingVertical: 30,
+  },
+  inputSection: {
+    marginTop: 180,
+    display: 'flex',
+    alignSelf: 'stretch',
+    flexDirection: 'column',
+    gap: 15,
+  },
+  title: {
+    color: '#0E3B4C',
+    fontFamily: 'Baloo2',
+    fontWeight: 600,
+    fontSize: 20,
+  },
+  input: {
+    borderRadius: 15,
+    borderWidth: 3,
+    height: 65,
+    borderColor: '#145A62'
+  },
+  nextButtonWrapper: {
+    alignSelf: 'flex-end'
   }
 });
