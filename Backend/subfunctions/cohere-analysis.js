@@ -3,11 +3,11 @@ import dotenv from "dotenv";
 dotenv.config();
 const cohere_key = process.env.COHERE_API_KEY;
 cohere.init(cohere_key);
-import healthJson from "./health-examples.json" assert { type: "json"};
+import healthJson from "../examples/health-examples.json" assert { type: "json"};
 const healthExamples = JSON.parse(JSON.stringify(healthJson))
-import fillerJson from "./filler-examples.json" assert { type: "json"};
+import fillerJson from "../examples/filler-examples.json" assert { type: "json"};
 const fillerExamples = JSON.parse(JSON.stringify(fillerJson));
-import tasteJson from "./taste-examples.json" assert { type: "json"};
+import tasteJson from "../examples/taste-examples.json" assert { type: "json"};
 const tasteExamples = JSON.parse(JSON.stringify(tasteJson));
 
 export async function cohereGenerateDescription(ingredient) {
