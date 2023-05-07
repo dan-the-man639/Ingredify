@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
   },
   discoverFood: {
     color: '#7BC55E',
-    fontFamily: 'Baloo2',
-    fontWeight: 600,
+    fontFamily: 'RL',
+    // fontWeight: 600,
     fontSize: 40,
     lineHeight: 45,
   },
