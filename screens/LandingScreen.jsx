@@ -5,11 +5,13 @@ import IngredifyLogo from '../assets/IngredifyLogo.png'
 import NextButton from '../assets/NextButton.png'
 import ProgressBar from '../assets/ProgressBar.png'
 import LandingImage from '../assets/LandingImage.png'
+import GradientDiagonal from '../assets/GradientDiagonal.png'
 
 
 export default function LandingScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
+      <Image source={GradientDiagonal} style={styles.backgroundImage}></Image>
       <View style={styles.topContainer}>
         <Image source={IngredifyLogo} style={styles.logo}></Image>
         <View style={styles.landingImageContainer}>
@@ -42,6 +44,12 @@ export default function LandingScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: 1000,
+  },
   container: {
     flex: 1,
     alignItems: 'center',
