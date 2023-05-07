@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 
 
-import ProfileImage from '../assets/IngredifyLogo.png'
+import ProfileImage from '../assets/ProfilePicture.png'
 import CameraButton from '../assets/CameraButton.png'
 import HomeButtonSelected from '../assets/HomeButtonSelected.png'
 import ProfileButton from '../assets/ProfileButton.png'
