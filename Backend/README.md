@@ -159,3 +159,6 @@ Returns a random fact from a predefined array.
 ## Unused
 https://dev.to/bjhaid_93/deploy-a-node-js-express-mongodb-api-to-azure-app-service-via-visual-studio-code-58ln
 https://learn.microsoft.com/en-us/azure/app-service/quickstart-nodejs?pivots=development-environment-azure-portal&tabs=linux
+
+https://axios-http.com/docs/post_example
+https://docs.cohere.com/reference/rerank-1
