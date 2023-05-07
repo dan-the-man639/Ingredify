@@ -35,14 +35,14 @@ export default function SetupScreen({ navigation }) {
       <View style={styles.conditionContainer}>
         <Text style={styles.label}>Allergies</Text>
         <View style={styles.options}>
-          <TouchableOpacity style={styles.restriction} onPress={() => setPeanuts(!peanuts)}>
-            <Text style={styles.restrictionText}>Peanuts</Text>
+          <TouchableOpacity style={peanuts ? styles.restrictionOn : styles.restrictionOff} onPress={() => setPeanuts(!peanuts)}>
+            <Text style={peanuts ? styles.restrictionTextOn : styles.restrictionTextOff}>Peanuts</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.restriction} onPress={() => setNuts(!nuts)}>            
-            <Text style={styles.restrictionText}>Nuts</Text>
+          <TouchableOpacity style={nuts ? styles.restrictionOn : styles.restrictionOff} onPress={() => setNuts(!nuts)}>            
+            <Text style={nuts ? styles.restrictionTextOn : styles.restrictionTextOff}>Nuts</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.restriction} onPress={() => setEggs(!eggs)}>
-            <Text style={styles.restrictionText}>Eggs</Text>
+          <TouchableOpacity style={eggs ? styles.restrictionOn : styles.restrictionOff} onPress={() => setEggs(!eggs)}>
+            <Text style={eggs ? styles.restrictionTextOn : styles.restrictionTextOff}>Eggs</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
             <Text style={styles.plusText}>+</Text>
@@ -163,7 +163,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 20,
+    gap: 10
+  },
+  restrictionOn: {
+    borderWidth: 1,
+    borderColor: '#F1F1F1',
+    borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
     gap: 10,
+    backgroundColor: '#F1F1F1'
+  },
+  restrictionOff: {
+    borderWidth: 1,
+    borderColor: '#F1F1F1',
+    borderRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    gap: 10
   },
   plus: {
     borderWidth: 1,
@@ -176,6 +197,18 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   restrictionText: {
+    color: '#F1F1F1',
+    fontFamily: 'Baloo2',
+    fontWeight: 600,
+    fontSize: 14,
+  },
+  restrictionTextOn: {
+    color: '#0E3B4C',
+    fontFamily: 'Baloo2',
+    fontWeight: 600,
+    fontSize: 14,
+  },
+  restrictionTextOff: {
     color: '#F1F1F1',
     fontFamily: 'Baloo2',
     fontWeight: 600,
