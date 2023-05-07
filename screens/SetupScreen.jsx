@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { StateContext } from '../App';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
@@ -11,18 +12,31 @@ import ProgressBar2 from '../assets/ProgressBar2.png'
 import GradientDiagonal from '../assets/GradientDiagonal.png'
 
 export default function SetupScreen({ navigation }) {
-  const [peanuts, setPeanuts] = useState(false);
-  const [nuts, setNuts] = useState(false);
-  const [eggs, setEggs] = useState(false);
-
-  const [diabetes, setDiabetes] = useState(false);
-  const [highBloodPressure, setHighBloodPressure] = useState(false);
-
-  const [halal, setHalal] = useState(false);
-
-  const [vegetarian, setVegetarian] = useState(false);
-  const [vegan, setVegan] = useState(false);
-
+  const { state, setState } = useContext(StateContext);
+  const togglePeanuts = () => {
+    setState(prevState => ({ ...prevState, peanuts: !prevState.peanuts }));
+  };
+  const toggleNuts = () => {
+    setState(prevState => ({ ...prevState, nuts: !prevState.nuts }));
+  };
+  const toggleEggs = () => {
+    setState(prevState => ({ ...prevState, eggs: !prevState.eggs }));
+  };
+  const toggleDiabetes = () => {
+    setState(prevState => ({ ...prevState, diabetes: !prevState.diabetes }));
+  };
+  const togglehighBloodPressure = () => {
+    setState(prevState => ({ ...prevState, highBloodPressure: !prevState.highBloodPressure }));
+  };
+  const toggleHalal = () => {
+    setState(prevState => ({ ...prevState, halal: !prevState.halal }));
+  };
+  const toggleVegetarian = () => {
+    setState(prevState => ({ ...prevState, vegetarian: !prevState.vegetarian }));
+  };
+  const toggleVegan = () => {
+    setState(prevState => ({ ...prevState, vegan: !prevState.vegan }));
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -35,14 +49,14 @@ export default function SetupScreen({ navigation }) {
       <View style={styles.conditionContainer}>
         <Text style={styles.label}>Allergies</Text>
         <View style={styles.options}>
-          <TouchableOpacity style={peanuts ? styles.restrictionOn : styles.restrictionOff} onPress={() => setPeanuts(!peanuts)}>
-            <Text style={peanuts ? styles.restrictionTextOn : styles.restrictionTextOff}>Peanuts</Text>
+          <TouchableOpacity style={state.peanuts ? styles.restrictionOn : styles.restrictionOff} onPress={() => togglePeanuts()}>
+            <Text style={state.peanuts ? styles.restrictionTextOn : styles.restrictionTextOff}>Peanuts</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={nuts ? styles.restrictionOn : styles.restrictionOff} onPress={() => setNuts(!nuts)}>            
-            <Text style={nuts ? styles.restrictionTextOn : styles.restrictionTextOff}>Nuts</Text>
+          <TouchableOpacity style={state.nuts ? styles.restrictionOn : styles.restrictionOff} onPress={() => toggleNuts()}>            
+            <Text style={state.nuts ? styles.restrictionTextOn : styles.restrictionTextOff}>Nuts</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={eggs ? styles.restrictionOn : styles.restrictionOff} onPress={() => setEggs(!eggs)}>
-            <Text style={eggs ? styles.restrictionTextOn : styles.restrictionTextOff}>Eggs</Text>
+          <TouchableOpacity style={state.eggs ? styles.restrictionOn : styles.restrictionOff} onPress={() => toggleEggs()}>
+            <Text style={state.eggs ? styles.restrictionTextOn : styles.restrictionTextOff}>Eggs</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
             <Text style={styles.plusText}>+</Text>
@@ -53,11 +67,11 @@ export default function SetupScreen({ navigation }) {
       <View style={styles.conditionContainer}>
         <Text style={styles.label}>Diseases</Text>
         <View style={styles.options}>
-          <TouchableOpacity style={styles.restriction} onPress={() => setDiabetes(!diabetes)}>
-            <Text style={styles.restrictionText}>Diabetes</Text>
+          <TouchableOpacity style={state.diabetes ? styles.restrictionOn : styles.restrictionOff} onPress={() => toggleDiabetes()}>
+            <Text style={state.diabetes ? styles.restrictionTextOn : styles.restrictionTextOff}>Diabetes</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.restriction} onPress={() => setHighBloodPressure(!highBloodPressure)}>
-            <Text style={styles.restrictionText}>High Blood Pressure</Text>
+          <TouchableOpacity style={state.highBloodPressure ? styles.restrictionOn : styles.restrictionOff} onPress={() => togglehighBloodPressure()}>
+            <Text style={state.highBloodPressure ? styles.restrictionTextOn : styles.restrictionTextOff}>High Blood Pressure</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
             <Text style={styles.plusText}>+</Text>
@@ -68,8 +82,8 @@ export default function SetupScreen({ navigation }) {
       <View style={styles.conditionContainer}>
         <Text style={styles.label}>Cultural Restrictions</Text>
         <View style={styles.options}>
-          <TouchableOpacity style={styles.restriction} onPress={() => setHalal(!halal)}>
-            <Text style={styles.restrictionText}>Halal</Text>
+          <TouchableOpacity style={state.halal ? styles.restrictionOn : styles.restrictionOff} onPress={() => toggleHalal()}>
+            <Text style={state.halal ? styles.restrictionTextOn : styles.restrictionTextOff}>Halal</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
             <Text style={styles.plusText}>+</Text>
@@ -80,11 +94,11 @@ export default function SetupScreen({ navigation }) {
       <View style={styles.conditionContainer}>
         <Text style={styles.label}>Other Restrictions</Text>
         <View style={styles.options}>
-          <TouchableOpacity style={styles.restriction} onPress={() => setVegetarian(!vegetarian)}>
-            <Text style={styles.restrictionText}>Vegetarian</Text>
+          <TouchableOpacity style={state.vegetarian ? styles.restrictionOn : styles.restrictionOff} onPress={() => toggleVegetarian()}>
+            <Text style={state.vegetarian ? styles.restrictionTextOn : styles.restrictionTextOff}>Vegetarian</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.restriction} onPress={() => setVegan(!vegan)}>
-            <Text style={styles.restrictionText}>Vegan</Text>
+          <TouchableOpacity style={state.vegan ? styles.restrictionOn : styles.restrictionOff} onPress={() => toggleVegan()}>
+            <Text style={state.vegan ? styles.restrictionTextOn : styles.restrictionTextOff}>Vegan</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.plus}>
             <Text style={styles.plusText}>+</Text>
@@ -126,7 +140,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#0E3B4C',
     paddingHorizontal: 20,
     paddingVertical: 30,
-    gap: 30
   },
   title: {
     color: '#F1F1F1',
@@ -135,10 +148,13 @@ const styles = StyleSheet.create({
     fontSize: 40,
     lineHeight: 45,
     alignSelf: 'stretch',
+    marginTop: 30,
+    marginBottom: 10,
   },
   conditionContainer: {
     alignSelf: 'stretch',
     flexDirection: 'column',
+    marginBottom: 25,
   },
   label: {
     color: '#7BC55E',
@@ -221,6 +237,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   bottomContainer: {
+    position: 'absolute',
+    bottom: 30,
+    left: 20,
+    right: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'stretch',

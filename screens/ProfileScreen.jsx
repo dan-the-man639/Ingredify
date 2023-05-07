@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 
-import ProfilePicture from '../assets/LogoJustPicture.png'
+import ProfilePicture from '../assets/ProfilePicture.png'
 import NextButton from '../assets/NextButton.png'
 import ProgressBar from '../assets/ProgressBar.png'
 import LandingImage from '../assets/LandingImage.png'

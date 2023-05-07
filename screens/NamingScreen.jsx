@@ -21,14 +21,14 @@ export default function NamingScreen({ navigation }) {
           style={styles.input}
           onChangeText={onChangeText}
           value={text}
-          placeholder="Apple Pie"
+          placeholder="Enter Item Name"
           placeholderTextColor="#82A5A9"
           selectionColor="#145A62"
           underlineColorAndroid="transparent"
           keyboardType="default"
         />
 
-        <TouchableOpacity onPress={() => navigation.navigate("ItemScreen")} style={styles.nextButtonWrapper}>
+        <TouchableOpacity onPress={() => navigation.navigate("ItemScreen", {'itemName': text})} style={styles.nextButtonWrapper}>
           <Image source={NextButton} style={styles.nextButton}></Image>
         </TouchableOpacity>
       </View>

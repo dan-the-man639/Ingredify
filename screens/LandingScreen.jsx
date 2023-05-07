@@ -85,6 +85,10 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   bottomContainer: {
+    position: 'absolute',
+    bottom: 30,
+    left: 20,
+    right: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
@@ -92,22 +96,22 @@ const styles = StyleSheet.create({
   },
   discoverFood: {
     color: '#7BC55E',
-    fontFamily: 'RL',
+    fontFamily: 'Baloo2',
     // fontWeight: 600,
     fontSize: 40,
-    lineHeight: 45,
+    lineHeight: 50,
   },
   forYou: {
     color: '#F1F1F1',
     fontFamily: 'Baloo2',
     fontWeight: 600,
     fontSize: 40,
-    lineHeight: 45,
+    lineHeight: 50,
   },
   description: {
     color: '#CCF9FF',
     fontFamily: 'Baloo2',
     fontWeight: 600,
-    fontSize: 16,
+    fontSize: 20,
   }
 });
