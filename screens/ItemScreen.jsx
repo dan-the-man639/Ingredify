@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { StateContext } from '../App';
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
@@ -9,7 +10,8 @@ import AteButton from '../assets/AteButton.png'
 import SafeImage from '../assets/SafeImage.png'
 import DangerImage from '../assets/DangerImage.png'
 
-export default function SetupScreen({ navigation }) {
+export default function SetupScreen({ navigation, route }) {
+  
   const [peanuts, setPeanuts] = useState(false);
   const [nuts, setNuts] = useState(false);
   const [eggs, setEggs] = useState(false);
@@ -28,7 +30,7 @@ export default function SetupScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
 
-      <Text style={styles.itemName}>Coca-Cola</Text>
+      <Text style={styles.itemName}>{route.params.itemName}</Text>
 
       <View style={styles.tagContainer}>
         <Text style={styles.tag}>Healthy</Text>
