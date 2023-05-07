@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import LandingScreen from './screens/LandingScreen.jsx'
 import SetupScreen from './screens/SetupScreen.jsx'
 import HomeScreen from './screens/HomeScreen.jsx'
+import ProfileScreen from './screens/ProfileScreen.jsx'
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -16,6 +17,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   const [loaded] = useFonts({
     Baloo2: require('./assets/fonts/Baloo2-VariableFont_wght.ttf'),
+    RB: require('./assets/fonts/Roboto-Black.ttf'),
+    RL: require('./assets/fonts/Roboto-Light.ttf'),
   });
 
   if (!loaded) {
@@ -38,6 +41,11 @@ export default function App() {
         <Stack.Screen 
           name="HomeScreen"
           component={HomeScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name="ProfileScreen"
+          component={ProfileScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

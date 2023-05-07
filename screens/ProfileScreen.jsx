@@ -1,42 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image } from 'react-native';
 
-import IngredifyLogo from '../assets/IngredifyLogo.png'
+import ProfilePicture from '../assets/LogoJustPicture.png'
 import NextButton from '../assets/NextButton.png'
 import ProgressBar from '../assets/ProgressBar.png'
 import LandingImage from '../assets/LandingImage.png'
 import GradientDiagonal from '../assets/GradientDiagonal.png'
 
 
-export default function LandingScreen({ navigation }) {
+export default function ProfileScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={GradientDiagonal} style={styles.backgroundImage}></Image>
-      <View style={styles.topContainer}>
-        <Image source={IngredifyLogo} style={styles.logo}></Image>
-        <View style={styles.landingImageContainer}>
-          <Image source={LandingImage} style={styles.landingImage}></Image>
-        </View>
-
-        <View style={styles.textContainer}>
-          <View>
-            <Text style={styles.discoverFood}>Discover food</Text>
-            <Text style={styles.forYou}>for you</Text>
-          </View>
-          <Text style={styles.description}>Ingredify is here to help you find what foods you can eat.</Text>
-        </View>
-
-      </View>
       
-      
-      <View style={styles.bottomContainer}>
-      <Image source={ProgressBar} style={styles.progressBar}></Image>
-
-      <TouchableOpacity onPress={() => navigation.navigate("SetupScreen")} style={styles.nextButtonWrapper}>
-        <Image source={NextButton} style={styles.nextButton}></Image>
-      </TouchableOpacity>
-
+      <View style={styles.profileCard}>
+        <Image style={styles.profilePicture} source={ProfilePicture}></Image>
+        <Text style={styles.name}>Ri Hong</Text>
       </View>
+
+      {/* REPLACE THIS WITH THE SELECTION THINGS FROM SETUPSCREEN ONCE DONE */}
+
+      {/* REPLACE THIS WITH THE NAVBAR FROM HOMESCREEN AND CHANGE OUT THE ICONS ONCE DONE */}
 
     </SafeAreaView>
 
