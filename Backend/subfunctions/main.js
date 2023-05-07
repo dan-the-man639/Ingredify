@@ -160,6 +160,6 @@ export async function randomFact() {
     const randIndex = Math.floor(Math.random() * keys.length)
     const randKey = keys[randIndex]
     const value = factArray[randKey]
-    console.log({[randKey]: value});
-    return {[randKey]: value};
+    console.log({"condition": [randKey], "fact": value});
+    return {"condition": [randKey], "fact": value};
 }
