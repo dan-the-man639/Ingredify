@@ -47,12 +47,30 @@ export default function ProfileScreen({ navigation }) {
     setState(prevState => ({ ...prevState, vegan: !prevState.vegan }));
   };
   
+  async function fetchUserData() {
+    const {data} = await axios.post(baseUrl, {
+        "action": "getProfile",
+        "username": "John Doe"
+    }, {
+        headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+        }
+    })
+    console.log(data.documents[0])
+
+    setUserName(data.documents[0].username);
+    setFoodItems(data.documents[0].consumed);
+    setConditionArray(data.documents[0].conditionArray);
+
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       
       <View style={styles.profileCard}>
         <Image style={styles.profilePicture} source={ProfilePictureBigger}></Image>
-        <Text style={styles.name}>Ri Hong</Text>
+        <Text style={styles.name}>John Doe</Text>
       </View>
 
       <View style={styles.conditionContainer}>
